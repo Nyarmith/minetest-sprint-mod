@@ -36,10 +36,13 @@ local function globalStepHandler( dtime )
     end
 
     --*Sprinting State-Machine(tm)*
-    -- STOPPED => MOVING => SPRINTING
-    --   ^          v           v
-    --   |          |           |
-    --   \__________+___________/
+    --      STOPPED ==> SPRINTING
+    --      ^    \             /
+    --     /      v           /
+    --    /      MOVING      /
+    --   /           /      /
+    --  /           /      /
+    --  \__________-______/
     -------------------------
     --
     local isMoving = player:get_player_control()["up"]
